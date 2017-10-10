@@ -2,17 +2,13 @@
 #include <stdlib.h>// NOLINT
 #include <iostream>
 
-using std::cout;
-using std::endl;
 
-
-int Qtable::createGrid(int grid [5][5]){
+void Qclass::createGrid(int grid[5][5]){
 	for(int i=3;i<5;i++){
 		for(int j=2;j<5;j++){
 			grid[i][j]=1;
 		}
 	}
-	return grid;
 }
 
 
@@ -21,7 +17,7 @@ int Qtable::createGrid(int grid [5][5]){
  * @param int x and int y are grid positions
  * @return Current state
  */
-int Qtable::findState(int x, int y) {  // based on sensor value combination find state
+int Qclass::findState(int x, int y) {
   int state = 0;
   state=x*y+y;
   return state;
@@ -32,7 +28,7 @@ int Qtable::findState(int x, int y) {  // based on sensor value combination find
  * @param int state.Current state of the robot.
  * @return Decided action of the possible 4 choices (up,down,left and right)
  */
-int Qtable::detAction(int state) {
+int Qclass::detAction(int state) {
   int action;
   int chosenAction;
   int temp = rand() % 100;
@@ -57,26 +53,26 @@ int Qtable::detAction(int state) {
  * @param int previous action,int x,int y, int grid[size][size]
  * @return Returns assigned reward
  */
-int Qtable::rewardfunc(int prevAction,int x,int y,int grid[size][size]) {
+int Qclass::rewardfunc(int lastAction,int x,int y,int grid[5][5]) {
 	//Add goal condition here
   int reward;
-  if(prevAction==0){
-	  if(x+1<=size)
+  if(lastAction==0){
+	  if(x+1<=5)
     reward=grid[x+1][y]*-100-1;
 	  else
 		  reward=-100;
   }
-  if(prevAction==1){
+  if(lastAction==1){
 	  if(x-1>=0)
 	  reward=grid[x-1][y]*-100-1;
   }
-  if(prevAction==2){
-	  if(y+1<=size)
+  if(lastAction==2){
+	  if(y+1<=5)
      reward=grid[x][y+1]*-100-1;
 	  else
 		  reward=-100;
   }
-  if(prevAction==3){
+  if(lastAction==3){
 	  if(y-1>=0)
      reward=grid[x][y-1]*-100-1;
 	  else
@@ -90,14 +86,14 @@ int Qtable::rewardfunc(int prevAction,int x,int y,int grid[size][size]) {
  * @param int state is the current state of the robot.
  * @return Max Q table value for the state
  */
-int Qtable::futurereward(int state) {
-  int currentMax = -100000;  // initiate var to keep track of max
+int Qclass::futurereward(int state) {
+  int currMax = -100000;
 
-  for (int i = 0; i != 4; i++) {  // cycle through every action
-    if (Q[state][i] > currentMax)  // if state action pair Q value greater than current Q value
-      currentMax = Q[state][i];  // set new max Q value
+  for (int i = 0; i != 4; i++) {
+    if (Q[state][i] > currMax)
+      currMax = Q[state][i];
   }
-  return currentMax;
+  return currMax;
 }
 
 /**
@@ -105,21 +101,21 @@ int Qtable::futurereward(int state) {
  * @param int previous state, previous action, state, x,y
  * @return none
  */
-void Qtable::Qupdate(int prevAction, int prevState, int x,int y, int state) {
-  Qtable::learn_rate=0.5;  // variables for update equation
-  Qtable::disc_rew=0.8;
+void Qclass::Qupdate(int lastAction, int lastState, int x,int y, int state) {
+  Qclass::learn_rate=0.5;  // variables for update equation
+  Qclass::disc_rew=0.8;
   int reward=0;
-  //int reward = rewardfunc(prevAction,x,y,grid[size][size]);
-    Q[prevState][prevAction] = Q[prevState][prevAction] + learn_rate * (reward)
-        - Q[prevState][prevAction];
-  Q[prevState][prevAction]=Q[prevState][prevAction]+ learn_rate * (reward + (disc_rew * futurereward(state))
-                  - Q[prevState][prevAction]);
+  //int reward = rewardfunc(lastAction,x,y,grid[size][size]);
+    Q[lastState][lastAction] = Q[lastState][lastAction] + learn_rate * (reward)
+        - Q[lastState][lastAction];
+  Q[lastState][lastAction]=Q[lastState][lastAction]+ learn_rate * (reward + (disc_rew * futurereward(state))
+                  - Q[lastState][lastAction]);
 }
 
-void Qtable::Train() {
+void Qclass::Train() {
 
 }
 
-void Qtable::execute() {
+void Qclass::execute() {
 
 }
