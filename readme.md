@@ -17,10 +17,10 @@ make
 # Dependancies
 
 This project uses GNUPLOT , a plotting function in C++ to show the final path chosen by the robot between two points. The project already includes the required header file (in include folder) which can be downloaded from:
-[I'm an inline-style link with title](http://www.gnuplot.info/download.html) 
--Download from forge sources in the link
+[GNUPLOT](http://www.gnuplot.info/download.html) 
+-Download from SourceForge in the link
 -Extract files on your computer
--Include the headerfile Emphasis,aka italics *gnuplot_i.hpp* in your project workspace
+-Include the headerfile *gnuplot_i.hpp* in your project workspace
 
 All these steps have already been performed for this repository
 

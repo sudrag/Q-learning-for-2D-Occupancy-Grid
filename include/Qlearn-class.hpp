@@ -5,20 +5,18 @@
 /* @brief: Define Q Learning Class which contains all variables for Q learning
  * There are as many states as grid cells and 4 actions(up,down,left,right)
  */
-class Qtable {  // define class
+class Qclass {  // define class
  public:
   int state;
-  int size=5;
-  int grid [size][size]={};
-  int rewardmatrix[size][size]={};
+  int grid [5][5]={};
   int action;
-  int Q[size*size][4]={ };
+  int Q[25][4]={ };
   double learn_rate=0.5;
   double disc_rew=0.8;
-  int createGrid(int grid[size][size]);
+  void createGrid(int grid[5][5]);
   int findState(int x,int y);
   int detAction(int state);
-  int rewardfunc(int prevAction,int x,int y,int grid[size][size]);
+  int rewardfunc(int prevAction,int x,int y,int grid[5][5]);
   int futurereward(int state);
   void Qupdate(int prevAction, int prevState,int x,int y, int state);
   void Train();
