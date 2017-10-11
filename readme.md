@@ -13,15 +13,34 @@ cd build
 cmake ..
 make
 ```
+# License
+This project uses the MIT license as shown below:
+
+```
+MIT License
+
+Copyright (c) 2017 Sudarshan Raghunathan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
 
 # Dependancies
 
 This project uses GNUPLOT , a plotting function in C++ to show the final path chosen by the robot between two points. The project already includes the required header file (in include folder) which can be downloaded from:
 [GNUPLOT](http://www.gnuplot.info/download.html) 
--Download from SourceForge in the link
--Extract files on your computer
--Include the headerfile *gnuplot_i.hpp* in your project workspace
+*Download from SourceForge in the link
+*Extract files on your computer
+*Include the headerfile *gnuplot_i.hpp* in your project workspace
 
 All these steps have already been performed for this repository
 
 # Solo-Iterative Processes
+This project was designed and developed using the SIP process. Tasks were organized after being identified and split up. The Product backlog,Iteration backlog , Time log and Defect log were recorded for each task and can be viewed in the link below:
+https://docs.google.com/spreadsheets/d/1cnBrs8IrD_-zirHzKbtn1QO49DNuiES0Kdlatnw9SK8/edit?usp=sharing
+
+*Iteration 1 involves the development of the Q learning algorithm which creates a Q table for all the state,action pairs and outputs a grid
+*Iteration 2 involves the development of test cases, error debugging, code commenting and formatting 
