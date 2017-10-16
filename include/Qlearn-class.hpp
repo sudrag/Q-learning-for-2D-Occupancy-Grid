@@ -10,21 +10,21 @@ class Qclass {  // define class
   int state;
   int grid [5][5]={};
   int action;
-  int Q[25][4]={ };
+  int Q[25][4]={};
   bool restart= false;
-  int goal_x =1;
-  int goal_y =1;
+  int goal_x =2;
+  int goal_y =2;
   double learn_rate=0.5;
   double disc_rew=0.8;
-  void createGrid(int grid[5][5]);
+  void createGrid();
   int findState(int x,int y);
-  int findpos(int lastAction,int prev_x,int prev_y);
   int detAction(int state);
-  int rewardfunc(int prevAction,int x,int y,bool restart);
+  int rewardfunc(int prevAction,int x,int y);
   int futurereward(int state);
-  void Qupdate(int prevAction, int prevState,int x,int y, int state, bool restart);
+  void Qupdate(int prevAction, int prevState,int x,int y, int state);
   void Train();
   void execute();
+  void plot();
 };
 
 
