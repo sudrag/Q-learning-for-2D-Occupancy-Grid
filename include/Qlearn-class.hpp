@@ -8,12 +8,12 @@
 class Qclass {  // define class
  public:
   int state;
-  int grid [5][5]={};
+  int grid [50][50]={};
   int action;
-  int Q[25][4]={};
+  double Q[2500][4]={};
   bool restart= false;
-  int goal_x =2;
-  int goal_y =2;
+  int goal_x =3;
+  int goal_y =0;
   double learn_rate=0.5;
   double disc_rew=0.8;
   void createGrid();
@@ -22,9 +22,9 @@ class Qclass {  // define class
   int rewardfunc(int prevAction,int x,int y);
   int futurereward(int state);
   void Qupdate(int prevAction, int prevState,int x,int y, int state);
-  void Train();
-  void execute();
-  void plot();
+  int Train();
+  int execute();
+  int plot();
 };
 
 

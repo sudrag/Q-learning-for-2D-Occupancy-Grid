@@ -5,11 +5,41 @@
 #include "gnuplot_i.hpp"
 
 void Qclass::createGrid() {
-	for (int i = 3; i < 5; i++) {
-		for (int j = 2; j < 5; j++) {
+	for (int i = 30; i < 50; i++) {
+		for (int j = 40; j < 50; j++) {
 			grid[i][j] = 1;
 		}
 	}
+	for (int i = 10; i < 20; i++) {
+		for (int j = 10; j < 30; j++) {
+			grid[i][j] = 1;
+		}
+	}
+	std::ofstream outfile;
+	outfile.open("Obstacles1.txt", std::ios::out | std::ios::trunc);
+	outfile.precision(6);
+	outfile << std::fixed << 30 << "   " << std::fixed << 40;
+	outfile << std::endl;
+	outfile << std::fixed << 30 << "   " << std::fixed << 50;
+	outfile << std::endl;
+	outfile << std::fixed << 50 << "   " << std::fixed << 50;
+	outfile << std::endl;
+	outfile << std::fixed << 50 << "   " << std::fixed << 40;
+	outfile << std::endl;
+	outfile << std::fixed << 30 << "   " << std::fixed << 40;
+	outfile.close();
+	outfile.open("Obstacles2.txt", std::ios::out | std::ios::trunc);
+	outfile.precision(6);
+	outfile << std::fixed << 10 << "   " << std::fixed << 10;
+	outfile << std::endl;
+	outfile << std::fixed << 10 << "   " << std::fixed << 30;
+	outfile << std::endl;
+	outfile << std::fixed << 20 << "   " << std::fixed << 30;
+	outfile << std::endl;
+	outfile << std::fixed << 20 << "   " << std::fixed << 10;
+	outfile << std::endl;
+	outfile << std::fixed << 10 << "   " << std::fixed << 10;
+	outfile.close();
 }
 
 /**
@@ -19,7 +49,7 @@ void Qclass::createGrid() {
  */
 int Qclass::findState(int x, int y) {
 	int state = 0;
-	state = x * 5 + y;
+	state = x * 50 + y;
 	return state;
 }
 
@@ -33,7 +63,7 @@ int Qclass::detAction(int state) {
 	int chosenAction;
 	int maxQ = -10000;
 	int temp = rand() % 100;
-	if (temp > 70) {
+	if (temp > 50) {
 		int randAction = rand() % 4;
 		chosenAction = randAction;
 	} else {
@@ -58,12 +88,12 @@ int Qclass::rewardfunc(int lastAction, int x, int y) {
 	int reward;
 	if (lastAction == 0) {
 		if (x + 1 == goal_x && y == goal_y) {
-			reward = 100;
+			reward = 1000;
 		} else {
-			if (x + 1 <= 4) {
-				reward = grid[x + 1][y] * -1000 - 10;
+			if (x + 1 <= 49) {
+				reward = grid[x + 1][y] * -10000 - 50;
 			} else {
-				reward = -1000;
+				reward = -10000;
 				restart = true;
 			}
 			if (grid[x + 1][y] == 1) {
@@ -73,12 +103,12 @@ int Qclass::rewardfunc(int lastAction, int x, int y) {
 	}
 	if (lastAction == 1) {
 		if (x - 1 == goal_x && y == goal_y) {
-			reward = 100;
+			reward = 1000;
 		} else {
 			if (x - 1 >= 0) {
-				reward = grid[x - 1][y] * -1000 - 10;
+				reward = grid[x - 1][y] * -10000 - 50;
 			} else {
-				reward = -1000;
+				reward = -10000;
 				restart = true;
 			}
 			if (grid[x - 1][y] == 1) {
@@ -88,12 +118,12 @@ int Qclass::rewardfunc(int lastAction, int x, int y) {
 	}
 	if (lastAction == 2) {
 		if (x == goal_x && y + 1 == goal_y) {
-			reward = 100;
+			reward = 1000;
 		} else {
-			if (y + 1 <= 4) {
-				reward = grid[x][y + 1] * -1000 - 10;
+			if (y + 1 <= 49) {
+				reward = grid[x][y + 1] * -10000 - 50;
 			} else {
-				reward = -1000;
+				reward = -10000;
 				restart = true;
 			}
 			if (grid[x][y + 1] == 1) {
@@ -103,12 +133,12 @@ int Qclass::rewardfunc(int lastAction, int x, int y) {
 	}
 	if (lastAction == 3) {
 		if (x == goal_x && y - 1 == goal_y) {
-			reward = 100;
+			reward = 1000;
 		} else {
 			if (y - 1 >= 0) {
-				reward = grid[x][y - 1] * -1000 - 10;
+				reward = grid[x][y - 1] * -10000 - 50;
 			} else {
-				reward = -1000;
+				reward = -10000;
 				restart = true;
 			}
 			if (grid[x][y - 1] == 1) {
@@ -126,11 +156,11 @@ int Qclass::rewardfunc(int lastAction, int x, int y) {
  */
 int Qclass::futurereward(int new_state) {
 	int currMax = -100000;
-	if (new_state > 24) {
-		currMax = -1000;
+	if (new_state > 2499) {
+		currMax = -100000;
 	} else {
-		for (int i = 0; i < 5; i++) {
-			if (Q[new_state][i] > currMax) {
+		for (int i = 0; i < 4; i++) {
+			if (Q[new_state][i] >= currMax) {
 				currMax = Q[new_state][i];
 			}
 		}
@@ -160,30 +190,29 @@ void Qclass::Qupdate(int lastAction, int lastState, int x, int y,
 	}
 }
 
-void Qclass::Train() {
-	std::cout << "Here" << std::endl;
+int Qclass::Train() {
+	Qclass::createGrid();
 	int firstRun = 1; // Can't update Q table on first run, no previous data to go off of
 	int new_x = 0;
 	int action = 0;
 	int new_y = 0;
 	int new_state = 0;
-	int start_x = rand() % 5;
-	int start_y = rand() % 5;
+	int start_x = rand() % 50;
+	int start_y = rand() % 50;
 	int goal_state = findState(goal_x, goal_y);
 	if (grid[start_x][start_y] == 1) {
 		while (grid[start_x][start_y] == 1) {
-			start_x = rand() % 5;
-			start_y = rand() % 5;
+			start_x = rand() % 50;
+			start_y = rand() % 50;
 		}
 	}
 	int prev_x = start_x;
 	int prev_y = start_y;
 	int state = findState(start_x, start_y);
-	for (int k = 0; k < 1000; k++) {
+	for (int k = 0; k < 10000; k++) {
 		int lastState = 0;
 		int lastAction = 0;
 		while (lastState != goal_state) {
-			//  std::cout<<"2"<<std::endl;
 			if (firstRun == 0) {
 				if (lastAction == 0) {
 					new_x = prev_x + 1;
@@ -214,12 +243,12 @@ void Qclass::Train() {
 			if (restart == true) {
 				restart = false;   // resetting so back to false
 				firstRun = 1;
-				int start_x = rand() % 5;
-				int start_y = rand() % 5;
+				int start_x = rand() % 50;
+				int start_y = rand() % 50;
 				if (grid[start_x][start_y] == 1) {
 					while (grid[start_x][start_y] == 1) {
-						start_x = rand() % 5;
-						start_y = rand() % 5;
+						start_x = rand() % 50;
+						start_y = rand() % 50;
 					}
 				}
 				prev_x = start_x;
@@ -231,29 +260,32 @@ void Qclass::Train() {
 			}
 		}
 	}
-	for (int i = 0; i < 25; i++) {
+	for (int i = 0; i < 2500; i++) {
 		std::cout << i << "  ";
 		for (int j = 0; j < 4; j++) {
 			std::cout << Q[i][j] << "  ";
 		}
 		std::cout << std::endl;
 	}
+	return 0;
 }
 
-void Qclass::execute() {
-	int start_x = rand() % 5;
-	int start_y = rand() % 5;
-	int last_state = 500;
-	int max = -1000;
+int Qclass::execute() {
+//	int start_x = rand() % 50;
+//	int start_y = rand() % 50;
+	int start_x = 35;
+	int start_y = 5;
+	int last_state = 5000;
+	int max = -10000;
 	int action = 0;
-	int start_state = 10;
+	int start_state = 10000;
 	int goal_state = findState(goal_x, goal_y);
-	if (grid[start_x][start_y] == 1) {
-		while (grid[start_x][start_y] == 1) {
-			start_x = rand() % 5;
-			start_y = rand() % 5;
-		}
-	}
+//	if (grid[start_x][start_y] == 1) {
+//		while (grid[start_x][start_y] == 1) {
+//			start_x = rand() % 50;
+//			start_y = rand() % 50;
+//		}
+//	}
 	std::ofstream outfile;
 	outfile.open("Co_ordinates.txt", std::ios::out | std::ios::trunc);
 	std::cout << "The path followed by the robot is:" << std::endl;
@@ -263,12 +295,13 @@ void Qclass::execute() {
 		outfile << std::fixed << start_x << "   " << std::fixed << start_y;
 		outfile << std::endl;
 		start_state = findState(start_x, start_y);
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 4; i++) {
 			if (Q[start_state][i] > max) {
 				max = Q[start_state][i];
 				action = i;
 			}
 		}
+		Q[start_state][action]=Q[start_state][action]-0.1;
 		if (action == 0) {
 			start_x = start_x + 1;
 		}
@@ -288,15 +321,19 @@ void Qclass::execute() {
 	std::cout << goal_x << "," << goal_y;
 	outfile << std::fixed << goal_x << "   " << std::fixed << goal_y;
 	outfile.close();
+	return 0;
 }
 
-void Qclass::plot() {
+
+int Qclass::plot() {
 	try {
 		Gnuplot g1("lines");
-		g1.set_grid();
-
-		g1.set_grid();
-		g1.plotfile_xy("Co_ordinates.txt", 1, 2, "Grid");
+		//g1.set_grid();
+		g1.set_xrange(0, 60);
+		g1.set_yrange(0, 60);
+		g1.plotfile_xy("Co_ordinates.txt", 1, 2, "Path");
+		g1.plotfile_xy("Obstacles1.txt", 1, 2, "Obstacles");
+		g1.plotfile_xy("Obstacles2.txt", 1, 2, "Obstacles");
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__)  // every keypress registered, also arrow keys
 		cout << endl << "Press any key to continue..." << endl;
 
@@ -313,5 +350,6 @@ void Qclass::plot() {
 	} catch (GnuplotException& ge) {
 		std::cout << ge.what() << std::endl;
 	}
+	return 0;
 }
 
