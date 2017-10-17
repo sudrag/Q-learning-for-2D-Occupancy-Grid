@@ -1,7 +1,7 @@
 add_executable(shell-app main.cpp)
-include_directories(
-	
-    ${CMAKE_SOURCE_DIR}/include
-)
 
+include_directories(
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/gnuplot-cpp
+)
 
