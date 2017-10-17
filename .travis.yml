@@ -19,16 +19,13 @@ matrix:
             - cmake
             - cmake-data
       env: COMPILER=g++-5
-        global:
-         - PACKAGE=gnuplot
-         - ISSUE_REPO=apt-package-whitelist
-         - ISSUE_NUMBER=663
+       
 
 before_install:
   - pip install --user cpp-coveralls
-  - if [ -z $PACKAGE ]; then echo "\$PACKAGE not defined" && travis_terminate 2; fi
 install:
   - sudo apt-get install -y -qq lcov
+  - sudo apt-get install gnuplot-x11
 script:
   - export CXX=$COMPILER;
   - mkdir build
