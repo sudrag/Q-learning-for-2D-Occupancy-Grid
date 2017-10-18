@@ -1743,7 +1743,7 @@ void Gnuplot::init() {
   //
   // open pipe
   //
-  std::string o = "/usr/local/bin/";
+  std::string o = "/usr/local/bin";
   std::string p = "gnuplot";
   std::string tmp = o + "/" + p;
 
