@@ -9,10 +9,12 @@ Navigating and path planning are integral components of mobile robotics with an 
 
 The methodology for this project follows the activity diagram depicted below:
 ![activi](https://github.com/sudrag/Q-learning-for-2D-Occupancy-Grid/blob/master/UML/revised/Activity.jpg)
+
+
 The Q table is declared in such a way that the 50 by 50 grid is represented as 2500 rows. Each state in this Q table has 4 potential actions UP,DOWN,LEFT and RIGHT. The algorithm is optimized by running for a large number of trials where each time the start position is randomly chosen for a fixed goal node. The Q-learning algorithm has a 20% exploration policy where it will randomly chose an action at a given state as opposed to chosing the best action there.This allows for all states to be covered more evenly. The algorithm also uses a discounted future reward value of 0.8 where the actions that will eventually lead to the goal are also rewarded. Once the algorithm is completed for a large number of trials , the Q table is optimized and we can now set a start and goal position and the algorithm will output the path it takes. This path taken is then stored into a text file to be output into a plot showing both the path and the obstacles. Some examples are shown below
 
-![ex1](https://github.com/sudrag/Q-learning-for-2D-Occupancy-Grid/blob/master/images/Example 2.png)
-![ex2](https://github.com/sudrag/Q-learning-for-2D-Occupancy-Grid/blob/master/images/Example 3.png)
+![ex1](https://github.com/sudrag/Q-learning-for-2D-Occupancy-Grid/blob/master/images/Example%202.png)
+![ex2](https://github.com/sudrag/Q-learning-for-2D-Occupancy-Grid/blob/master/images/Example%203.png)
 ## License
 This project uses the MIT license as shown below:
 
@@ -42,7 +44,6 @@ make
 ## Dependancies
 
 This project uses GNUPLOT , a plotting function in C++ to show the final path chosen by the robot between two points. The process for installing this dependancy is:
-[GNUPLOT](http://www.gnuplot.info/download.html) 
 
 ```
 * cd <git_workspace>
@@ -64,6 +65,7 @@ cd build
 cd<git_workspace>
 cd build
 ./test/cpp-test
+```
 
 ## Doxygen Documentation
 To generate Doxygen Documentation in HTML and LaTEX, follow the next steps:
