@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/gnuplot-cpp/app",
+  "command": "/usr/bin/c++    -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/include  -Wall -Wextra -Wpedantic -g   -std=gnu++14 -o CMakeFiles/shell-app.dir/main.cpp.o -c /home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/app/main.cpp",
+  "file": "/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/app/main.cpp"
+},
+{
+  "directory": "/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/gnuplot-cpp/test",
+  "command": "/usr/bin/c++    -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/test/../vendor/googletest/googletest/include -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/include -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/vendor/googletest/googletest/include  -Wall -Wextra -Wpedantic -g   -std=gnu++14 -o CMakeFiles/cpp-test.dir/main.cpp.o -c /home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/test/main.cpp",
+  "file": "/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/test/main.cpp"
+},
+{
+  "directory": "/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/gnuplot-cpp/test",
+  "command": "/usr/bin/c++    -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/test/../vendor/googletest/googletest/include -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/include -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/vendor/googletest/googletest/include  -Wall -Wextra -Wpedantic -g   -std=gnu++14 -o CMakeFiles/cpp-test.dir/test.cpp.o -c /home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/test/test.cpp",
+  "file": "/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/test/test.cpp"
+},
+{
+  "directory": "/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/gnuplot-cpp/test",
+  "command": "/usr/bin/c++    -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/test/../vendor/googletest/googletest/include -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/include -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/vendor/googletest/googletest/include  -Wall -Wextra -Wpedantic -g   -std=gnu++14 -o CMakeFiles/cpp-test.dir/__/app/Learn.cpp.o -c /home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/app/Learn.cpp",
+  "file": "/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/app/Learn.cpp"
+},
+{
+  "directory": "/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/gnuplot-cpp/vendor/googletest/googletest",
+  "command": "/usr/bin/c++    -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/vendor/googletest/googletest/include -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/vendor/googletest/googletest  -Wall -Wextra -Wpedantic -g   -Wall -Wextra -Wpedantic -g -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/vendor/googletest/googletest/src/gtest-all.cc",
+  "file": "/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/vendor/googletest/googletest/src/gtest-all.cc"
+},
+{
+  "directory": "/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/gnuplot-cpp/vendor/googletest/googletest",
+  "command": "/usr/bin/c++    -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/vendor/googletest/googletest/include -I/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/vendor/googletest/googletest  -Wall -Wextra -Wpedantic -g   -Wall -Wextra -Wpedantic -g -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/vendor/googletest/googletest/src/gtest_main.cc",
+  "file": "/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/vendor/googletest/googletest/src/gtest_main.cc"
+}
+]

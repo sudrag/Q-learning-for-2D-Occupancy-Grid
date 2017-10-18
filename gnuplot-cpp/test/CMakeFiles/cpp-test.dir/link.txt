@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -Wpedantic -g   CMakeFiles/cpp-test.dir/main.cpp.o CMakeFiles/cpp-test.dir/test.cpp.o CMakeFiles/cpp-test.dir/__/app/Learn.cpp.o  -o cpp-test -rdynamic ../vendor/googletest/googletest/libgtest.a -lpthread 

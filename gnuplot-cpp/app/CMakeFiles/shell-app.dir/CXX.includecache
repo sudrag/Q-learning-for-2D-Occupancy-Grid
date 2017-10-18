@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Qlearn-class.hpp
+
+../include/lib.hpp
+iostream
+-
+
+/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/app/Learn.cpp
+Qlearn-class.hpp
+/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/app/Qlearn-class.hpp
+stdlib.h
+-
+iostream
+-
+fstream
+-
+gnuplot_i.hpp
+/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/app/gnuplot_i.hpp
+
+/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/app/main.cpp
+iostream
+-
+lib.hpp
+-
+Qlearn-class.hpp
+/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/app/Qlearn-class.hpp
+Learn.cpp
+/home/sudartion/workspace/Q-learning-for-2D-Occupancy-Grid/app/Learn.cpp
+
