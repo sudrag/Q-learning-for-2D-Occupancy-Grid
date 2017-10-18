@@ -4,3 +4,6 @@
 [submodule "vendor/boost"]
 	path = vendor/boost
 	url = git@github.com:boostorg/boost.git
+[submodule "gnuplot-cpp"]
+	path = gnuplot-cpp
+	url = git://https://github.com/sudrag/Q-learning-for-2D-Occupancy-Grid/gnuplot-cpp
