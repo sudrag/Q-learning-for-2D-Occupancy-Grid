@@ -1,9 +1,8 @@
 /**
- * @fileName    : lib.hpp
+ * @file        : lib.hpp
  * @author      : Sudarshan Raghunathan
  * @copyright   : 2017 Sudarshan Raghunathan
- * @section DESCRIPTION
- * Qlearning class member function declarations
+ * @brief       : Qlearning class member function declarations
  */
 
 #pragma once

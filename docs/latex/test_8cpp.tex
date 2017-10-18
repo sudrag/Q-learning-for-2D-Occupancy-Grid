@@ -1,0 +1,162 @@
+\hypertarget{test_8cpp}{}\section{/home/sudartion/workspace/\+Q-\/learning-\/for-\/2\+D-\/\+Occupancy-\/\+Grid/test/test.cpp File Reference}
+\label{test_8cpp}\index{/home/sudartion/workspace/\+Q-\/learning-\/for-\/2\+D-\/\+Occupancy-\/\+Grid/test/test.\+cpp@{/home/sudartion/workspace/\+Q-\/learning-\/for-\/2\+D-\/\+Occupancy-\/\+Grid/test/test.\+cpp}}
+
+
+\+: Test functions for the Q learning class  
+
+
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\\*
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include \char`\"{}../include/\+Qlearn-\/class.\+hpp\char`\"{}}\\*
+Include dependency graph for test.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{test_8cpp_a241bcd81e39ef3fa1c2c47d8b6efa6f1}{T\+E\+ST} (\hyperlink{classQclass}{Qclass}, find\+State)
+\begin{DoxyCompactList}\small\item\em Helps identify right state for x,y locations. \end{DoxyCompactList}\item 
+\hyperlink{test_8cpp_a561c23d473313de5621a2569f68b3e7a}{T\+E\+ST} (\hyperlink{classQclass}{Qclass}, det\+Action)
+\begin{DoxyCompactList}\small\item\em Checks if action chosen is between 0 and 3. \end{DoxyCompactList}\item 
+\hyperlink{test_8cpp_aad9452b52a85973fe250d2e9d90f6565}{T\+E\+ST} (\hyperlink{classQclass}{Qclass}, rewardfunc)
+\begin{DoxyCompactList}\small\item\em Checks if reward is assigned correctly. \end{DoxyCompactList}\item 
+\hyperlink{test_8cpp_a3e39acafdfb01f2bef1bd17232ec8ac1}{T\+E\+ST} (\hyperlink{classQclass}{Qclass}, futurereward)
+\begin{DoxyCompactList}\small\item\em Helps identify right state for x,y locations. \end{DoxyCompactList}\item 
+\hyperlink{test_8cpp_a375bcfbcfcf54810593015b95b37988f}{T\+E\+ST} (\hyperlink{classQclass}{Qclass}, Qupdate)
+\begin{DoxyCompactList}\small\item\em Helps identify right state for x,y locations. \end{DoxyCompactList}\item 
+\hyperlink{test_8cpp_a8b29e3cdcfd29c1718a8eb41ef9ac4c3}{T\+E\+ST} (\hyperlink{classQclass}{Qclass}, Train)
+\begin{DoxyCompactList}\small\item\em Checks if training is completed. \end{DoxyCompactList}\item 
+\hyperlink{test_8cpp_adc6592bfeb0f0acb502a92de5b607f27}{T\+E\+ST} (\hyperlink{classQclass}{Qclass}, execute)
+\begin{DoxyCompactList}\small\item\em Checks if goal was reached. \end{DoxyCompactList}\item 
+\hyperlink{test_8cpp_a99d5559a3a9c7d47f27088ef8baff52b}{T\+E\+ST} (\hyperlink{classQclass}{Qclass}, plot)
+\begin{DoxyCompactList}\small\item\em Checks if plot was completed. \end{DoxyCompactList}\item 
+\hyperlink{test_8cpp_a370b1d58b6b11ffc7829f8c3a60086d8}{T\+E\+ST} (\hyperlink{classQclass}{Qclass}, noplot)
+\begin{DoxyCompactList}\small\item\em Checks output for plotting empty text file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\+: Test functions for the Q learning class 
+
+\begin{DoxyAuthor}{Author}
+\+: Sudarshan Raghunathan 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+\+: 2017 Sudarshan Raghunathan 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\index{test.\+cpp@{test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Qclass, find\+State)}{TEST(Qclass, findState)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{{\bf Qclass}}]{, }
+\item[{find\+State}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{test_8cpp_a241bcd81e39ef3fa1c2c47d8b6efa6f1}{}\label{test_8cpp_a241bcd81e39ef3fa1c2c47d8b6efa6f1}
+
+
+Helps identify right state for x,y locations. 
+
+\index{test.\+cpp@{test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Qclass, det\+Action)}{TEST(Qclass, detAction)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{{\bf Qclass}}]{, }
+\item[{det\+Action}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{test_8cpp_a561c23d473313de5621a2569f68b3e7a}{}\label{test_8cpp_a561c23d473313de5621a2569f68b3e7a}
+
+
+Checks if action chosen is between 0 and 3. 
+
+\index{test.\+cpp@{test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Qclass, rewardfunc)}{TEST(Qclass, rewardfunc)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{{\bf Qclass}}]{, }
+\item[{rewardfunc}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{test_8cpp_aad9452b52a85973fe250d2e9d90f6565}{}\label{test_8cpp_aad9452b52a85973fe250d2e9d90f6565}
+
+
+Checks if reward is assigned correctly. 
+
+\index{test.\+cpp@{test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Qclass, futurereward)}{TEST(Qclass, futurereward)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{{\bf Qclass}}]{, }
+\item[{futurereward}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{test_8cpp_a3e39acafdfb01f2bef1bd17232ec8ac1}{}\label{test_8cpp_a3e39acafdfb01f2bef1bd17232ec8ac1}
+
+
+Helps identify right state for x,y locations. 
+
+\index{test.\+cpp@{test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Qclass, Qupdate)}{TEST(Qclass, Qupdate)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{{\bf Qclass}}]{, }
+\item[{Qupdate}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{test_8cpp_a375bcfbcfcf54810593015b95b37988f}{}\label{test_8cpp_a375bcfbcfcf54810593015b95b37988f}
+
+
+Helps identify right state for x,y locations. 
+
+\index{test.\+cpp@{test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Qclass, Train)}{TEST(Qclass, Train)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{{\bf Qclass}}]{, }
+\item[{Train}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{test_8cpp_a8b29e3cdcfd29c1718a8eb41ef9ac4c3}{}\label{test_8cpp_a8b29e3cdcfd29c1718a8eb41ef9ac4c3}
+
+
+Checks if training is completed. 
+
+\index{test.\+cpp@{test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Qclass, execute)}{TEST(Qclass, execute)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{{\bf Qclass}}]{, }
+\item[{execute}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{test_8cpp_adc6592bfeb0f0acb502a92de5b607f27}{}\label{test_8cpp_adc6592bfeb0f0acb502a92de5b607f27}
+
+
+Checks if goal was reached. 
+
+\index{test.\+cpp@{test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Qclass, plot)}{TEST(Qclass, plot)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{{\bf Qclass}}]{, }
+\item[{plot}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{test_8cpp_a99d5559a3a9c7d47f27088ef8baff52b}{}\label{test_8cpp_a99d5559a3a9c7d47f27088ef8baff52b}
+
+
+Checks if plot was completed. 
+
+\index{test.\+cpp@{test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Qclass, noplot)}{TEST(Qclass, noplot)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{{\bf Qclass}}]{, }
+\item[{noplot}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{test_8cpp_a370b1d58b6b11ffc7829f8c3a60086d8}{}\label{test_8cpp_a370b1d58b6b11ffc7829f8c3a60086d8}
+
+
+Checks output for plotting empty text file. 
+

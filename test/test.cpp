@@ -1,9 +1,8 @@
 /**
- * @fileName    : test.cpp
+ * @file        : test.cpp
  * @author      : Sudarshan Raghunathan
  * @copyright   : 2017 Sudarshan Raghunathan
- * @section DESCRIPTION
- * Test functions for the Q learning class
+ * @brief       : Test functions for the Q learning class
  */
 #include <gtest/gtest.h>
 #include <memory>

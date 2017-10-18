@@ -1,0 +1,269 @@
+\hypertarget{classQclass}{}\section{Qclass Class Reference}
+\label{classQclass}\index{Qclass@{Qclass}}
+
+
+{\ttfamily \#include $<$Qlearn-\/class.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQclass_ab6bd1cc95cf90e0c1759ba26f57bd5a3}{$\sim$\+Qclass} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{State}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classQclass_ac7e42ac35f89616a6036aabd29e928f7}{state}
+\item 
+int \hyperlink{classQclass_ab060f941f076f76056d8276594893b54}{grid} \mbox{[}50\mbox{]}\mbox{[}50\mbox{]} = \{\}
+\item 
+int \hyperlink{classQclass_a1a72661a0262d34a0b4326c0ef654a1e}{action}
+\item 
+double \hyperlink{classQclass_a84fb95339b401c66efa8c47d1426c1fe}{Q} \mbox{[}2500\mbox{]}\mbox{[}4\mbox{]} = \{\}
+\item 
+bool \hyperlink{classQclass_a04ec3a45dc94d48bf13e27c3f18b8399}{restart} = false
+\item 
+int \hyperlink{classQclass_ab8b70c6206387fcf4dd9ff6d4d7cb2a6}{goal\+\_\+x} = 3
+\item 
+int \hyperlink{classQclass_a492324bfb266e2ed4f0faf4487fad979}{goal\+\_\+y} = 0
+\item 
+double \hyperlink{classQclass_addcd4274dbe26c15264572bf354cbd79}{learn\+\_\+rate} = 0.\+5
+\item 
+double \hyperlink{classQclass_aca70cf943c9d29dcea36f7c6a46d9f0e}{disc\+\_\+rew} = 0.\+8
+\item 
+void \hyperlink{classQclass_ae9f97c2f18fc7d9e307e35994901da2a}{create\+Grid} ()
+\begin{DoxyCompactList}\small\item\em Creates the grid with obstacles in it.\+Obstacle added to .txt file to plot. \end{DoxyCompactList}\item 
+int \hyperlink{classQclass_a834429fa9e01f1b283a0caada7802be3}{find\+State} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Finds current state based on x,y position. \end{DoxyCompactList}\item 
+int \hyperlink{classQclass_a9037e62a852d506051538adfcf7e2337}{det\+Action} (int \hyperlink{classQclass_ac7e42ac35f89616a6036aabd29e928f7}{state})
+\begin{DoxyCompactList}\small\item\em Determines the action to be performed next. \end{DoxyCompactList}\item 
+int \hyperlink{classQclass_a4155dabacd6e918c6288bd453e956547}{rewardfunc} (int prev\+Action, int x, int y)
+\begin{DoxyCompactList}\small\item\em Assigns a reward based on action chosen. \end{DoxyCompactList}\item 
+int \hyperlink{classQclass_acf95c3d28bc5ab0409a0824abf36fe04}{futurereward} (int \hyperlink{classQclass_ac7e42ac35f89616a6036aabd29e928f7}{state})
+\begin{DoxyCompactList}\small\item\em Finds the highest reward considering future rewards. \end{DoxyCompactList}\item 
+void \hyperlink{classQclass_a9feff64b8b2c661a16f4229215957541}{Qupdate} (int prev\+Action, int prev\+State, int x, int y, int \hyperlink{classQclass_ac7e42ac35f89616a6036aabd29e928f7}{state})
+\begin{DoxyCompactList}\small\item\em Updates Q table based on action taken for given grid position. \end{DoxyCompactList}\item 
+int \hyperlink{classQclass_a4bf8b5d57ca3cf93ee0b9e74c5eeb5f8}{Train} ()
+\begin{DoxyCompactList}\small\item\em Performs the training for the Q learning algorithm for a large number of trials. \end{DoxyCompactList}\item 
+int \hyperlink{classQclass_a475913f6b4aa9508a501007260afe96b}{execute} ()
+\begin{DoxyCompactList}\small\item\em Finds the path from start to goal node using optimized Q table. \end{DoxyCompactList}\item 
+int \hyperlink{classQclass_aecebf934f5a3500e2bf2ae98ca02093c}{plot} ()
+\begin{DoxyCompactList}\small\item\em Plots the path and obstacles stored in txt files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Qclass@{Qclass}!````~Qclass@{$\sim$\+Qclass}}
+\index{````~Qclass@{$\sim$\+Qclass}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{$\sim$\+Qclass()}{~Qclass()}}]{\setlength{\rightskip}{0pt plus 5cm}Qclass\+::$\sim$\+Qclass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classQclass_ab6bd1cc95cf90e0c1759ba26f57bd5a3}{}\label{classQclass_ab6bd1cc95cf90e0c1759ba26f57bd5a3}
+
+
+Destructor for the class. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Qclass@{Qclass}!create\+Grid@{create\+Grid}}
+\index{create\+Grid@{create\+Grid}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{create\+Grid()}{createGrid()}}]{\setlength{\rightskip}{0pt plus 5cm}void Qclass\+::create\+Grid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classQclass_ae9f97c2f18fc7d9e307e35994901da2a}{}\label{classQclass_ae9f97c2f18fc7d9e307e35994901da2a}
+
+
+Creates the grid with obstacles in it.\+Obstacle added to .txt file to plot. 
+
+\index{Qclass@{Qclass}!det\+Action@{det\+Action}}
+\index{det\+Action@{det\+Action}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{det\+Action(int state)}{detAction(int state)}}]{\setlength{\rightskip}{0pt plus 5cm}int Qclass\+::det\+Action (
+\begin{DoxyParamCaption}
+\item[{int}]{state}
+\end{DoxyParamCaption}
+)}\hypertarget{classQclass_a9037e62a852d506051538adfcf7e2337}{}\label{classQclass_a9037e62a852d506051538adfcf7e2337}
+
+
+Determines the action to be performed next. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & -\/\+Current state of the robot. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+action decided out of the possible 4 choices (up,down,left and right) 
+\end{DoxyReturn}
+\index{Qclass@{Qclass}!execute@{execute}}
+\index{execute@{execute}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{execute()}{execute()}}]{\setlength{\rightskip}{0pt plus 5cm}int Qclass\+::execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classQclass_a475913f6b4aa9508a501007260afe96b}{}\label{classQclass_a475913f6b4aa9508a501007260afe96b}
+
+
+Finds the path from start to goal node using optimized Q table. 
+
+\begin{DoxyReturn}{Returns}
+0 when goal node is reached 
+\end{DoxyReturn}
+\index{Qclass@{Qclass}!find\+State@{find\+State}}
+\index{find\+State@{find\+State}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{find\+State(int x, int y)}{findState(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}int Qclass\+::find\+State (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classQclass_a834429fa9e01f1b283a0caada7802be3}{}\label{classQclass_a834429fa9e01f1b283a0caada7802be3}
+
+
+Finds current state based on x,y position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & grid position x \\
+\hline
+{\em y} & grid position y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+state current 
+\end{DoxyReturn}
+\index{Qclass@{Qclass}!futurereward@{futurereward}}
+\index{futurereward@{futurereward}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{futurereward(int state)}{futurereward(int state)}}]{\setlength{\rightskip}{0pt plus 5cm}int Qclass\+::futurereward (
+\begin{DoxyParamCaption}
+\item[{int}]{new\+\_\+state}
+\end{DoxyParamCaption}
+)}\hypertarget{classQclass_acf95c3d28bc5ab0409a0824abf36fe04}{}\label{classQclass_acf95c3d28bc5ab0409a0824abf36fe04}
+
+
+Finds the highest reward considering future rewards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+state} & is the next state of the robot for action taken in current state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+curr\+Max table value for the state 
+\end{DoxyReturn}
+\index{Qclass@{Qclass}!plot@{plot}}
+\index{plot@{plot}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{plot()}{plot()}}]{\setlength{\rightskip}{0pt plus 5cm}int Qclass\+::plot (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classQclass_aecebf934f5a3500e2bf2ae98ca02093c}{}\label{classQclass_aecebf934f5a3500e2bf2ae98ca02093c}
+
+
+Plots the path and obstacles stored in txt files. 
+
+\begin{DoxyReturn}{Returns}
+0 when path plotting is complete 
+\end{DoxyReturn}
+\index{Qclass@{Qclass}!Qupdate@{Qupdate}}
+\index{Qupdate@{Qupdate}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{Qupdate(int prev\+Action, int prev\+State, int x, int y, int state)}{Qupdate(int prevAction, int prevState, int x, int y, int state)}}]{\setlength{\rightskip}{0pt plus 5cm}void Qclass\+::\+Qupdate (
+\begin{DoxyParamCaption}
+\item[{int}]{last\+Action, }
+\item[{int}]{last\+State, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{new\+\_\+state}
+\end{DoxyParamCaption}
+)}\hypertarget{classQclass_a9feff64b8b2c661a16f4229215957541}{}\label{classQclass_a9feff64b8b2c661a16f4229215957541}
+
+
+Updates Q table based on action taken for given grid position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em last\+State} & \\
+\hline
+{\em last\+Action} & \\
+\hline
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em new\+\_\+state} & \\
+\hline
+\end{DoxyParams}
+\index{Qclass@{Qclass}!rewardfunc@{rewardfunc}}
+\index{rewardfunc@{rewardfunc}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{rewardfunc(int prev\+Action, int x, int y)}{rewardfunc(int prevAction, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}int Qclass\+::rewardfunc (
+\begin{DoxyParamCaption}
+\item[{int}]{last\+Action, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classQclass_a4155dabacd6e918c6288bd453e956547}{}\label{classQclass_a4155dabacd6e918c6288bd453e956547}
+
+
+Assigns a reward based on action chosen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em last\+Action} & \\
+\hline
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reward assigned 
+\end{DoxyReturn}
+\index{Qclass@{Qclass}!Train@{Train}}
+\index{Train@{Train}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{Train()}{Train()}}]{\setlength{\rightskip}{0pt plus 5cm}int Qclass\+::\+Train (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classQclass_a4bf8b5d57ca3cf93ee0b9e74c5eeb5f8}{}\label{classQclass_a4bf8b5d57ca3cf93ee0b9e74c5eeb5f8}
+
+
+Performs the training for the Q learning algorithm for a large number of trials. 
+
+\begin{DoxyReturn}{Returns}
+0 when training is complete 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{Qclass@{Qclass}!action@{action}}
+\index{action@{action}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{action}{action}}]{\setlength{\rightskip}{0pt plus 5cm}int Qclass\+::action}\hypertarget{classQclass_a1a72661a0262d34a0b4326c0ef654a1e}{}\label{classQclass_a1a72661a0262d34a0b4326c0ef654a1e}
+\index{Qclass@{Qclass}!disc\+\_\+rew@{disc\+\_\+rew}}
+\index{disc\+\_\+rew@{disc\+\_\+rew}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{disc\+\_\+rew}{disc_rew}}]{\setlength{\rightskip}{0pt plus 5cm}double Qclass\+::disc\+\_\+rew = 0.\+8}\hypertarget{classQclass_aca70cf943c9d29dcea36f7c6a46d9f0e}{}\label{classQclass_aca70cf943c9d29dcea36f7c6a46d9f0e}
+\index{Qclass@{Qclass}!goal\+\_\+x@{goal\+\_\+x}}
+\index{goal\+\_\+x@{goal\+\_\+x}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{goal\+\_\+x}{goal_x}}]{\setlength{\rightskip}{0pt plus 5cm}int Qclass\+::goal\+\_\+x = 3}\hypertarget{classQclass_ab8b70c6206387fcf4dd9ff6d4d7cb2a6}{}\label{classQclass_ab8b70c6206387fcf4dd9ff6d4d7cb2a6}
+\index{Qclass@{Qclass}!goal\+\_\+y@{goal\+\_\+y}}
+\index{goal\+\_\+y@{goal\+\_\+y}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{goal\+\_\+y}{goal_y}}]{\setlength{\rightskip}{0pt plus 5cm}int Qclass\+::goal\+\_\+y = 0}\hypertarget{classQclass_a492324bfb266e2ed4f0faf4487fad979}{}\label{classQclass_a492324bfb266e2ed4f0faf4487fad979}
+\index{Qclass@{Qclass}!grid@{grid}}
+\index{grid@{grid}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{grid}{grid}}]{\setlength{\rightskip}{0pt plus 5cm}int Qclass\+::grid\mbox{[}50\mbox{]}\mbox{[}50\mbox{]} = \{\}}\hypertarget{classQclass_ab060f941f076f76056d8276594893b54}{}\label{classQclass_ab060f941f076f76056d8276594893b54}
+\index{Qclass@{Qclass}!learn\+\_\+rate@{learn\+\_\+rate}}
+\index{learn\+\_\+rate@{learn\+\_\+rate}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{learn\+\_\+rate}{learn_rate}}]{\setlength{\rightskip}{0pt plus 5cm}double Qclass\+::learn\+\_\+rate = 0.\+5}\hypertarget{classQclass_addcd4274dbe26c15264572bf354cbd79}{}\label{classQclass_addcd4274dbe26c15264572bf354cbd79}
+\index{Qclass@{Qclass}!Q@{Q}}
+\index{Q@{Q}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{Q}{Q}}]{\setlength{\rightskip}{0pt plus 5cm}double Qclass\+::Q\mbox{[}2500\mbox{]}\mbox{[}4\mbox{]} = \{\}}\hypertarget{classQclass_a84fb95339b401c66efa8c47d1426c1fe}{}\label{classQclass_a84fb95339b401c66efa8c47d1426c1fe}
+\index{Qclass@{Qclass}!restart@{restart}}
+\index{restart@{restart}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{restart}{restart}}]{\setlength{\rightskip}{0pt plus 5cm}bool Qclass\+::restart = false}\hypertarget{classQclass_a04ec3a45dc94d48bf13e27c3f18b8399}{}\label{classQclass_a04ec3a45dc94d48bf13e27c3f18b8399}
+\index{Qclass@{Qclass}!state@{state}}
+\index{state@{state}!Qclass@{Qclass}}
+\subsubsection[{\texorpdfstring{state}{state}}]{\setlength{\rightskip}{0pt plus 5cm}Qclass\+::state}\hypertarget{classQclass_ac7e42ac35f89616a6036aabd29e928f7}{}\label{classQclass_ac7e42ac35f89616a6036aabd29e928f7}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/sudartion/workspace/\+Q-\/learning-\/for-\/2\+D-\/\+Occupancy-\/\+Grid/include/\hyperlink{Qlearn-class_8hpp}{Qlearn-\/class.\+hpp}\item 
+/home/sudartion/workspace/\+Q-\/learning-\/for-\/2\+D-\/\+Occupancy-\/\+Grid/app/\hyperlink{Learn_8cpp}{Learn.\+cpp}\end{DoxyCompactItemize}
