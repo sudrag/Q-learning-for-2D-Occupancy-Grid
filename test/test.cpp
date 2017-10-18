@@ -68,3 +68,12 @@ TEST(Qclass, plot) {
   Qclass Test;
   EXPECT_EQ(Test.plot(), 0);
 }
+/**
+ * @brief Checks output for plotting empty text file
+ */
+TEST(Qclass, noplot) {
+  Qclass Test;
+  remove("Obstacles1.txt");
+  EXPECT_EQ(Test.plot(), 0);
+}
+

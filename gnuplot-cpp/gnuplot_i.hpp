@@ -1017,10 +1017,10 @@ Gnuplot::~Gnuplot() {
 // A stream opened by popen() should be closed by pclose()
 // #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__)
 //  if (_pclose(gnucmd) == -1)
-// #elif defined(unix) || defined(__unix) || defined(__unix__) || defined(__APPLE__)
-//  if (pclose(gnucmd) == -1)
-// #endif
-//    throw GnuplotException("Problem closing communication to gnuplot");
+ #if defined(unix) || defined(__unix) || defined(__unix__) || defined(__APPLE__)
+    if (pclose(gnucmd) == -1)
+ #endif
+    throw GnuplotException("Problem closing communication to gnuplot");
 }
 
 //------------------------------------------------------------------------------
@@ -1121,7 +1121,7 @@ Gnuplot& Gnuplot::set_style(const std::string &stylestr) {
 //
 Gnuplot& Gnuplot::showonscreen() {
   cmd("set output");
-  cmd("set terminal "  + Gnuplot::terminal_std);
+  cmd("set terminal "+ Gnuplot::terminal_std);
   return *this;
 }
 
@@ -1707,8 +1707,8 @@ Gnuplot& Gnuplot::cmd(const std::string &cmdstr) {
   if (cmdstr.find("replot") != std::string::npos) {
     return *this;
   } else if (cmdstr.find("splot") != std::string::npos) {
-//    two_dim = false;
-//    nplots++;
+    two_dim = false;
+    nplots++;
   } else if (cmdstr.find("plot") != std::string::npos) {
     two_dim = true;
     nplots++;
