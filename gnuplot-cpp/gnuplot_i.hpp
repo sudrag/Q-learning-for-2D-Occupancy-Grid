@@ -619,7 +619,7 @@ int Gnuplot::tmpfile_num = 0;
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__)
 #elif defined(unix) || defined(__unix) || defined(__unix__) || defined(__APPLE__)
 std::string Gnuplot::m_sGNUPlotFileName = "gnuplot";
-std::string Gnuplot::m_sGNUPlotPath = "/usr/local/bin";
+std::string Gnuplot::m_sGNUPlotPath = "/usr/local/bin/";
 #endif
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__)
