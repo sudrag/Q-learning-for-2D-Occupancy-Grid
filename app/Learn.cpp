@@ -1,9 +1,8 @@
 /**
- * @fileName    : Learn.cpp
+ * @file        : Learn.cpp
  * @author      : Sudarshan Raghunathan
  * @copyright   : 2017 Sudarshan Raghunathan
- * @section DESCRIPTION
- * Qlearning class member function declarations
+ * @brief       : Qlearning class member function declarations
  */
 
 #include <stdlib.h>
@@ -19,8 +18,6 @@ Qclass::~Qclass() {
 }
 /**
  * @brief Creates the grid with obstacles in it.Obstacle added to .txt file to plot
- * @param none
- * @return none
  */
 
 void Qclass::createGrid() {
@@ -63,8 +60,9 @@ void Qclass::createGrid() {
 
 /**
  * @brief Finds current state based on x,y position
- * @param int x and int y are grid positions
- * @return Current state
+ * @param x  grid position x
+ * @param y  grid position y
+ * @return state current
  */
 int Qclass::findState(int x, int y) {
   int state = 0;
@@ -74,8 +72,8 @@ int Qclass::findState(int x, int y) {
 
 /**
  * @brief Determines the action to be performed next
- * @param int state.Current state of the robot.
- * @return Decided action of the possible 4 choices (up,down,left and right)
+ * @param state -Current state of the robot.
+ * @return action decided out of the possible 4 choices (up,down,left and right)
  */
 int Qclass::detAction(int state) {
   int action;
@@ -99,8 +97,10 @@ int Qclass::detAction(int state) {
 
 /**
  * @brief Assigns a reward based on action chosen
- * @param int previous action,int x,int y
- * @return Returns assigned reward
+ *@param lastAction
+ *@param x
+ *@param y
+ * @return reward assigned
  */
 int Qclass::rewardfunc(int lastAction, int x, int y) {
   int reward;
@@ -172,8 +172,8 @@ int Qclass::rewardfunc(int lastAction, int x, int y) {
 
 /**
  * @brief Finds the highest reward considering future rewards
- * @param int new state is the next state of the robot for action taken in current state
- * @return Max Q table value for the state
+ *@param new_state is the next state of the robot for action taken in current state
+ * @return currMax table value for the state
  */
 int Qclass::futurereward(int new_state) {
   double currMax = -100000;
@@ -191,8 +191,11 @@ int Qclass::futurereward(int new_state) {
 
 /**
  * @brief Updates Q table based on action taken for given grid position
- * @param int lastState, lastAction,x,y, new_state
- * @return none
+ *@param lastState
+ *@param lastAction
+ *@param x
+ *@param y
+ *@param new_state
  */
 void Qclass::Qupdate(int lastAction, int lastState, int x, int y,
                      int new_state) {
@@ -212,7 +215,6 @@ void Qclass::Qupdate(int lastAction, int lastState, int x, int y,
 }
 /**
  * @brief Performs the training for the Q learning algorithm for a large number of trials
- * @param none
  * @return 0 when training is complete
  */
 
@@ -300,13 +302,12 @@ int Qclass::Train() {
 }
 /**
  * @brief Finds the path from start to goal node using optimized Q table
- * @param none
  * @return 0 when goal node is reached
  */
 
 int Qclass::execute() {   // Executes the learned algorithm for given start
-  int start_x = 45;
-  int start_y = 15;
+  int start_x = 47;
+  int start_y = 47;
   int last_state = 5000;
   double max = -10000;
   int action = 0;
@@ -350,7 +351,6 @@ int Qclass::execute() {   // Executes the learned algorithm for given start
 }
 /**
  * @brief Plots the path and obstacles stored in txt files
- * @param none
  * @return 0 when path plotting is complete
  */
 
