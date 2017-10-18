@@ -65,9 +65,9 @@ class Gnuplot {
   // \brief name of executed GNUPlot file
   static constexpr const char* m_sGNUPlotFileName = "gnuplot";
   // \brief gnuplot path
-  static constexpr const char* m_sGNUPlotPath = "/usr/local/bin/";
+  static std::string  m_sGNUPlotPath;
   // \brief standart terminal, used by showonscreen
-  static constexpr const char* terminal_std = "x11";
+  static std::string  terminal_std;
 
   //----------------------------------------------------------------------------------
   // member functions (auxiliary functions)
@@ -619,12 +619,13 @@ int Gnuplot::tmpfile_num = 0;
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__)
 #elif defined(unix) || defined(__unix) || defined(__unix__) || defined(__APPLE__)
 static constexpr const char* m_sGNUPlotFileName = "gnuplot";
+std::string Gnuplot::m_sGNUPlotPath = "/usr/local/bin/";
 #endif
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__)
 // std::string Gnuplot::terminal_std = "windows";
 #elif(defined(unix) || defined(__unix) || defined(__unix__)) && !defined(__APPLE__)
-// static constexpr const char* Gnuplot::terminal_std = "x11";
+std::string Gnuplot::terminal_std = "x11";
 #elif defined(__APPLE__)
 // std::string Gnuplot::terminal_std = "aqua";
 #endif
@@ -1120,8 +1121,7 @@ Gnuplot& Gnuplot::set_style(const std::string &stylestr) {
 //
 Gnuplot& Gnuplot::showonscreen() {
   cmd("set output");
-  std::string m = "set terminal ";
-  cmd(m + Gnuplot::terminal_std);
+  cmd("set terminal "  + Gnuplot::terminal_std);
   return *this;
 }
 
@@ -1743,9 +1743,8 @@ void Gnuplot::init() {
   //
   // open pipe
   //
-  std::string o = "/usr/local/bin";
-  std::string p = "gnuplot";
-  std::string tmp = o + "/" + p;
+  std::string tmp = Gnuplot::m_sGNUPlotPath + "/" +
+                        Gnuplot::m_sGNUPlotFileName;
 
   // FILE *popen(const char *command, const char *mode);
   // The popen() function shall execute the command specified by the string
