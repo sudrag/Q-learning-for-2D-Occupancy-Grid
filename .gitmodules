@@ -6,4 +6,4 @@
 	url = git@github.com:boostorg/boost.git
 [submodule "gnuplot-cpp"]
 	path = gnuplot-cpp
-	url = https://github.com/gnuplot-cpp
+	url =  https://github.com/tttamaki/gnuplot-cpp
